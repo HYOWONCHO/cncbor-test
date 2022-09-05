@@ -50,13 +50,13 @@ int whcbor_cmd_dispatch(uint8_t *payload, uint32_t len)
 
     memset((void *)&whmap, 0x00, sizeof whmap);
 
-    decodemap = cn_cbor_decode((const uint8_t *)_payload, len, CBOR_CONTEXT_PARAM, 0);
+    decodemap = cn_cbor_decode((const uint8_t *)_payload, len CBOR_CONTEXT_PARAM, NULL);
 
 
-    whcbor_cm_map_fetch((void *)decodemap, (void *)&whmap);
+    whcbor_cmd_map_fetch((void *)decodemap, (void *)&whmap);
 
 
-    if(m->command == NULL || m->subcommand == NULL) {
+    if(whmap.command == NULL || whmap.subcommand == NULL) {
         goto err;
     }
 

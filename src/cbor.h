@@ -115,4 +115,4 @@
 #define UNUSED_PARAM(p) ((void)&(p))
 #endif
 
-#endif // CBOR_PROTOCOL_H__
+#endif // CBOR_PROTOCOL_H_

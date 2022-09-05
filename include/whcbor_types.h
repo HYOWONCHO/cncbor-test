@@ -7,7 +7,8 @@
 #include <string.h>
 #include <errno.h>
 
-#include <cn-cbor/cn-cbor.h>
+#include "cn-cbor/cn-cbor.h""
+#include "cbor.h"
 
 typedef struct _whcbor_map_t {
     cn_cbor *command;
@@ -28,22 +29,19 @@ typedef enum _e_whcbor_cmd {
 typedef enum _e_whcbor_scp_subcmd {
     WHCBOR_SCP_SUBCMD_CONNECT           = 0x01,
     WHCBOR_SCP_SUBCMD_RECONNECT
-}e_whcbor_cmd;
+}e_whcbor_scp_subcmd;
 
 typedef enum _e_whcbor_bio_subcmd {
     WHCBOR_BIO_SUBCMD_ENROLLBEGIN       = 0x01,
     WHCBOR_BIO_SUBCMD_ENROLLCOMMIT,
     WHCBOR_BIO_SUBCMD_IDENTIFY
-}e_whcbor_cmd;
+}e_whcbor_bio_subcmd;
 
 
 
 // Error define
 #define WHCBOR_RET_DONE                     false
 #define WHCBOR_RET_FAIL                     -true
-
-
-
 
 #endif
 
