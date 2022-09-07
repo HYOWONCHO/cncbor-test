@@ -258,6 +258,8 @@ cn_cbor* cn_cbor_decode(const unsigned char* buf, size_t len CBOR_CONTEXT, cn_cb
   struct parse_buf pb;
   cn_cbor* ret;
 
+    //printf("buf addr : %p , len : %p \n", buf, len);
+    dump("cbor decode buf", buf, len, true);
   pb.buf  = (unsigned char *)buf;
   pb.ebuf = (unsigned char *)buf+len;
   pb.err  = CN_CBOR_NO_ERROR;

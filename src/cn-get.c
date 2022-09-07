@@ -32,6 +32,7 @@ cn_cbor* cn_cbor_mapget_string(const cn_cbor* cb, const char* key) {
   assert(cb);
   assert(key);
   keylen = strlen(key);
+
   for (cp = cb->first_child; cp && cp->next; cp = cp->next->next) {
     switch(cp->type) {
     case CN_CBOR_TEXT: // fall-through

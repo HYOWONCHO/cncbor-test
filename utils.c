@@ -13,7 +13,7 @@ void dump(const char *title, const void* data, int size, bool offset)
 
     buffer = (uint8_t*)data;
 
-    (title != NULL) ? printf("Title : %s  \n", title) : printf("Title : None \n");
+    (title != NULL) ? printf("Title : %s  ( Message Len : %d )\n", title, size) : printf("Title : None ( Message Len : %d )\n", size);
 
     if ( offset == true ) {
         fprintf(stdout, "    [  Offset  ] : 0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 0x08 0x09 0x0A 0x0B 0x0C 0x0D 0x0E 0x0F\n");
